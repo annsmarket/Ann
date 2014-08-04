@@ -55,14 +55,14 @@ module.exports = (grunt) ->
                     compile: true
                     literate: true
                     sourceMap: true
-                    src: srcFiles
+                src: srcFiles
             build:
                 options:
                     runtime: 'none'
                     compile: true
                     literate: true
                     sourceMap: true
-                    files: [{src: srcFiles}]
+                files: [{src: srcFiles}]
 
         watch:
             coffeescript:
