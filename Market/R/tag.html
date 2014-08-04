@@ -1,0 +1,19 @@
+<div class="row" ng-init="getList()">
+    <div class="col-md-12">
+        <span class="badge badge-default" style="cursor:pointer" ng-repeat="tag in tags" ng-click="chooseTag($event, tag)">
+             {{tag.name}}
+        </span>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-xs-3" ng-repeat="service in services">
+        <div class="thumbnail">
+            <img class="img-rounded" src="">
+            <div class="caption text-center">
+                <h3><a href="#service/{{service.id}}">{{service.name}}</a></h3>
+                <p>{{service.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

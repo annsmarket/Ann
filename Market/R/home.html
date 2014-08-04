@@ -1,0 +1,14 @@
+<div>
+    <h2>Today's Top Services</h2>
+</div>
+<div class="row">
+    <div class="col-xs-3" ng-repeat="service in todayTopServices">
+        <div class="thumbnail">
+            <img class="img-rounded" src="">
+            <div class="caption text-center">
+                <h3><a href="#service/{{service.id}}">{{service.name}}</a></h3>
+                <p>{{service.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

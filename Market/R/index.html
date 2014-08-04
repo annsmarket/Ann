@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ann's Market</title>
+<script>
+var reloadServer = (location.host || 'localhost').split(':')[0]
+if (reloadServer.indexOf('192.168') == 0 || reloadServer === 'localhost') {
+    document.write('<script src="http://'
+        + reloadServer
+        + ':35729/livereload.js"></'
+        + 'script>')
+}
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="background-color: #fff">
+	<script src="/__SCRIPT"></script>
+    <script data-main="js/main.js" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+    <div ng-controller="MenuCtrl" class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand">Ann's Market</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li id="homeMenu"><a href="#/home">Home</a></li>
+                <!--
+                <li id="companyMenu"><a href="#/company">Company</a></li>
+            -->
+                <li id="serviceMenu"><a href="#/service">Service</a></li>
+                <li id="tagMenu"><a href="#/tag">Tag</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!--  ng-if="loginStatus.status == 'connected'"
+                 ng-if="!loginStatus || loginStatus.status != 'connected'"
+                -->
+                <li><button id="loginButton" class="btn btn-warning navbar-btn" ng-click="login()">Connect with Facebook</button></li>
+                <li><a target="_blank" href="http://facebook.com/{{me.id}}"><img class="img-rounded" ng-src="https://graph.facebook.com/{{me.id == undefined ? '2' : me.id}}/picture?width=12&height=12"></a></li>
+                <li><button id="logoutButton" class="btn btn-danger navbar-btn" ng-click="logout()">Log out</button></li>
+            </ul>
+        </div>
+    </div>
+    <div ng-view class="container"></div>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</body>
+</html>
