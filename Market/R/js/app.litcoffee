@@ -2,7 +2,6 @@
         'angularAMD'
         'jquery'
         'angular-route'
-        'ngStorage'
         'ezfb'
     ], (angularAMD, $) ->
         app = angular.module("ngreq-app", ["ngRoute", 'ezfb'])

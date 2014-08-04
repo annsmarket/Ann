@@ -1,4 +1,4 @@
-    define ['app', 'jquery', 'jquery.bootstrap', 'bootflat', 'ui-bootstrap'], (app, $) ->
+    define ['app', 'jquery'], (app, $) ->
         app.controller "ServiceDetailCtrl", ($scope, $routeParams, $window, utils, serviceModel, commentModel) ->
             console.log $window.sessionStorage.me
             utils.injectScope $scope, commentModel, serviceModel
