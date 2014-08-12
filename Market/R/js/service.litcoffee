@@ -1,5 +1,5 @@
     define ['app', 'jquery'], (app, $) ->
-        app.controller "ServiceCtrl", ["$scope", "utils", "serviceModel", "tagModel", ($scope, utils, serviceModel, tagModel) ->
+        app.controller "ServiceCtrl", ($scope, utils, serviceModel, tagModel) ->
             # $('body').css({'background-color': 'black'})
             # $('#serviceMenu').addClass 'active'
             # $('#companyMenu').removeClass 'active'
@@ -57,6 +57,8 @@
                         ->
                             console.log 'final'
                             serviceModel.create
+                                creatorId: $window.sessionStorage.me.id
+                                creatorName: $window.sessionStorage.me.name
                                 name: $scope.name
                                 description: $scope.description
                                 tags: tagIds
@@ -71,5 +73,4 @@
                 return
 
             return
-            ]
         return
