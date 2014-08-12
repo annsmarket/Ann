@@ -38,6 +38,7 @@
                 $routeProvider.when("/home", angularAMD.route(
                     templateUrl: "home.html"
                     controller: "HomeCtrl"
+                    tab: 'home'
                 )).when("/tag", angularAMD.route(
                     templateUrl: "tag.html"
                     controller: "TagCtrl"
@@ -53,7 +54,16 @@
                 )).otherwise redirectTo: "/home"
             ]
 
-        app.controller "MenuCtrl", ($scope, $window, ezfb) ->
+        app.controller "MenuCtrl", ($scope, $window, $location, ezfb) ->
+            $scope.activeTab = 'home'
+
+            $scope.$on '$locationChangeStart', (event) ->
+                $scope.activeTab = $location.url().substring 1
+                return
+
+            $scope.isTabActive = (tabName) ->
+                if tabName is $scope.activeTab then 'active' else undefined
+
             $scope.safeApply = (fn) ->
                 phase = @$root.$$phase
                 if phase is "$apply" or phase is "$digest"

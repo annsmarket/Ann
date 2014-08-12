@@ -2,10 +2,10 @@
 
     define ['app', 'jquery'], (app, $) ->
         app.controller "HomeCtrl", ["$scope", "utils", "serviceModel", ($scope, utils, serviceModel) ->
-            $('#homeMenu').addClass 'active'
-            $('#tagMenu').removeClass 'active'
-            $('#companyMenu').removeClass 'active'
-            $('#serviceMenu').removeClass 'active'
+            # $('#homeMenu').addClass 'active'
+            # $('#tagMenu').removeClass 'active'
+            # $('#companyMenu').removeClass 'active'
+            # $('#serviceMenu').removeClass 'active'
 
             utils.injectScope $scope, serviceModel
 

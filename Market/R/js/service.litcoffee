@@ -1,10 +1,10 @@
     define ['app', 'jquery'], (app, $) ->
         app.controller "ServiceCtrl", ["$scope", "utils", "serviceModel", "tagModel", ($scope, utils, serviceModel, tagModel) ->
             # $('body').css({'background-color': 'black'})
-            $('#serviceMenu').addClass 'active'
-            $('#companyMenu').removeClass 'active'
-            $('#tagMenu').removeClass 'active'
-            $('#homeMenu').removeClass 'active'
+            # $('#serviceMenu').addClass 'active'
+            # $('#companyMenu').removeClass 'active'
+            # $('#tagMenu').removeClass 'active'
+            # $('#homeMenu').removeClass 'active'
             utils.injectScope $scope, serviceModel, tagModel
 
             $scope.getList = ->

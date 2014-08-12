@@ -1,9 +1,9 @@
     define ['app', 'jquery'], (app, $) ->
         app.controller "TagCtrl", ["$scope", 'utils', "serviceModel", "tagModel", ($scope, utils, serviceModel, tagModel) ->
-            $('#tagMenu').addClass 'active'
-            $('#homeMenu').removeClass 'active'
-            $('#companyMenu').removeClass 'active'
-            $('#serviceMenu').removeClass 'active'
+            # $('#tagMenu').addClass 'active'
+            # $('#homeMenu').removeClass 'active'
+            # $('#companyMenu').removeClass 'active'
+            # $('#serviceMenu').removeClass 'active'
             # $('body').css({'background-color': 'black'})
 
 인기있는 태그들은 더 크게 나오게도 할 수 있다.(또는 우선 순위) 인기도를 조작할 수 있다.
