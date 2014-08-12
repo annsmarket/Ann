@@ -42,9 +42,12 @@
                 )).when("/tag", angularAMD.route(
                     templateUrl: "tag.html"
                     controller: "TagCtrl"
-                )).when("/company", angularAMD.route(
-                    templateUrl: "company.html"
-                    controller: "CompanyCtrl"
+                )).when("/creator", angularAMD.route(
+                    templateUrl: "creator.html"
+                    controller: "CreatorCtrl"
+                )).when("/creator/:id", angularAMD.route(
+                    templateUrl: "creator-detail.html"
+                    controller: "CreatorDetailCtrl"
                 )).when("/service", angularAMD.route(
                     templateUrl: "service.html"
                     controller: "ServiceCtrl"

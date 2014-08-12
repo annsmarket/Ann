@@ -1,35 +1,9 @@
-# 회사 (공통)
+Creator
 
-전에 DB를 다루는 경우에는 모델을 설계하는 경우 반드시 스키마가 필요하다.
-
-어떤 필드가 있고, 그 필드가 무슨 타입(문자, 숫자)
-
-스키마 없이 마음대로 데이터를 넣는 NoSQL -> 몽고디비
-
-회사와 서비스가 1-N 구조.
-
-
- * 이름
- * 주소
- * 회사 공식 페이지 링크
-
-서비스
-
- * 이름
- * 대표 링크
- * 소개글
- * 태그
- * 코멘트, 레이팅
-
- 1. 가
- 2. 나
-
-텍스트 내용
-
-    Market.CompanyModel = OBJECT
+    Market.CreatorModel = OBJECT
 
         preset : ->
             Market.MODEL
 
         params : ->
-            name : 'Company'
+            name : 'Creator'

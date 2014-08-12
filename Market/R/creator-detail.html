@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-xs-8">
+        <p>
+            Name:
+            {{service.name}}
+        </p>
+        <p>
+            Description:
+            {{service.description}}
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <p>
+            <button popover="Verify is ..." popover-title="TBD" popover-placement="right" class="btn btn-info">Verify</button>
+        </p>
+        <p>
+            <button popover="Evaluate is ..." popover-title="TBD" popover-placement="right" class="btn btn-info">Evaluate</button>
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        {{result}}
+        <form>
+            Comment
+            <textarea class="form-control" ng-model="content"></textarea>
+            <br>
+            <button class="btn btn-primary" ng-click="register()">Register</button>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Comments</h2>
+        <ul class="media-list">
+            <li class="media" ng-repeat="comment in comments">
+                <a class="pull-left" href="#">
+                    <img class="media-object img-rounded" ng-src="https://graph.facebook.com/{{comment.authorId}}/picture?width=20&height=20">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">{{comment.authorName}}</h4>
+                    <p>{{comment.createTime}}</p>
+                    <p>{{comment.content}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
