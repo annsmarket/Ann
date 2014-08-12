@@ -1,7 +1,7 @@
 # 브라우저
 
     define ['app', 'jquery'], (app, $) ->
-        app.controller "HomeCtrl", ["$scope", "utils", "serviceModel", ($scope, utils, serviceModel) ->
+        app.controller "HomeCtrl", ($scope, utils, serviceModel) ->
             # $('#homeMenu').addClass 'active'
             # $('#tagMenu').removeClass 'active'
             # $('#companyMenu').removeClass 'active'
@@ -17,5 +17,4 @@
                     return
 
             return
-        ]
         return
