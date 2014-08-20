@@ -1,5 +1,5 @@
     define ['app', 'jquery'], (app, $) ->
-        app.controller "ServiceCtrl", ($scope, utils, serviceModel, tagModel) ->
+        app.controller "ServiceCtrl", ($scope, utils, serviceModel, tagModel, creatorModel) ->
             # $('body').css({'background-color': 'black'})
             # $('#serviceMenu').addClass 'active'
             # $('#companyMenu').removeClass 'active'
@@ -19,7 +19,7 @@
 
             $scope.register = ->
 
-태그를 넣어준다.
+Add tags.
 
                 tags = []
 

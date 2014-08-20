@@ -14,8 +14,8 @@
 
                 return
 
-        app.factory 'companyModel', ->
-            Market.CompanyModel
+        app.factory 'creatorModel', ->
+            Market.CreatorModel
 
         app.factory 'serviceModel', ->
             Market.ServiceModel

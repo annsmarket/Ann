@@ -1,10 +1,10 @@
     define ['app', 'jquery'], (app, $) ->
-        app.controller "CreatorCtrl", ($scope, creatorModel) ->
+        app.controller "CreatorCtrl", ($scope, utils, creatorModel) ->
+            utils.injectScope $scope, creatorModel
             $scope.getList = ->
-                creatorModel.findDataSet {filter: {}}, (result) ->
+                creatorModel.find {}, (result) ->
                     if result.hasError is false
-                        $scope.creators = result.savedDataSet
-                        $scope.$apply()
+                        $scope.creators = result
                     return
                 return
             return

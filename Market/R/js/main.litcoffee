@@ -9,8 +9,8 @@
             'ezfb': 'http://pc035860.github.io/angular-easyfb/angular-easyfb.min'
 
             'HomeCtrl': 'home'
-            'CreatorCtrl': 'company'
-            'CreatorDetailCtrl': 'company-detail'
+            'CreatorCtrl': 'creator'
+            'CreatorDetailCtrl': 'creator-detail'
             'ServiceCtrl': 'service'
             'ServiceDetailCtrl': 'service-detail'
             'TagCtrl': 'tag'
