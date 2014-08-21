@@ -1,18 +1,14 @@
 <div class="row">
     <div class="col-xs-8">
         <p>
+            <img class="img-rounded" ng-src="https://graph.facebook.com/{{creator.fbId}}/picture?width=40&height=40">
+        </p>
+        <p>
             Name:
             {{creator.name}}
         </p>
-        <p>
-            Description:
-            {{creator.description}}
-        </p>
     </div>
     <div class="col-xs-4">
-        <p>
-            <button popover="Verify is ..." popover-title="TBD" popover-placement="right" class="btn btn-info">Verify</button>
-        </p>
         <p>
             <button popover="Evaluate is ..." popover-title="TBD" popover-placement="right" class="btn btn-info">Evaluate</button>
         </p>

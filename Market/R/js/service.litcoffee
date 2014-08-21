@@ -1,11 +1,11 @@
     define ['app', 'jquery'], (app, $) ->
-        app.controller "ServiceCtrl", ($scope, utils, serviceModel, tagModel, creatorModel) ->
+        app.controller "ServiceCtrl", ($scope, $window, utils, serviceModel, tagModel, creatorModel) ->
             # $('body').css({'background-color': 'black'})
             # $('#serviceMenu').addClass 'active'
             # $('#companyMenu').removeClass 'active'
             # $('#tagMenu').removeClass 'active'
             # $('#homeMenu').removeClass 'active'
-            utils.injectScope $scope, serviceModel, tagModel
+            utils.injectScope $scope, serviceModel, tagModel, creatorModel
 
             $scope.getList = ->
                 serviceModel.find {}, (result) ->
@@ -16,6 +16,19 @@
                 return
 
             $scope.getList()
+
+            createService = (tagIds, creatorId) ->
+                serviceModel.create
+                        creatorId: creatorId
+                        name: $scope.name
+                        description: $scope.description
+                        tags: tagIds
+                    , (result) ->
+                        $scope.showForm = false
+                        $('#result').html('Registration is completed')
+                        $scope.getList()
+                        return
+                return
 
             $scope.register = ->
 
@@ -55,18 +68,23 @@ Add tags.
                         return
                     ->
                         ->
-                            console.log 'final'
-                            serviceModel.create
-                                creatorId: $window.sessionStorage.me.id
-                                creatorName: $window.sessionStorage.me.name
-                                name: $scope.name
-                                description: $scope.description
-                                tags: tagIds
-                                , (result) ->
-                                    $scope.showForm = false
-                                    $('#result').html('Registration is completed')
-                                    $scope.getList()
-                                    return
+                            creatorId = $window.sessionStorage.getItem 'creatorId'
+                            console.log 'c', creatorId
+
+                            if creatorId?
+                                console.log 'cc'
+                                createService tagIds, creatorId
+                            else
+                                creatorModel.create
+                                        fbId: $window.sessionStorage.getItem 'fbId'
+                                        name: $window.sessionStorage.getItem 'name'
+                                    , (result) ->
+                                        creatorId = result.id
+                                        console.log 'ccc', creatorId
+                                        $window.sessionStorage.setItem 'creatorId', creatorId
+                                        createService tagIds, creatorId
+                                        return
+
                             return
                 ]
 

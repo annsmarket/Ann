@@ -1,9 +1,6 @@
     define ['app', 'jquery'], (app, $) ->
         app.controller "ServiceDetailCtrl", ($scope, $routeParams, $window, utils, serviceModel, commentModel) ->
-            console.log $window.sessionStorage.me
             utils.injectScope $scope, commentModel, serviceModel
-            commentModel.scope = $scope
-            serviceModel.scope = $scope
             getList = ->
                 commentModel.find {filter: {service: $scope.service.id}}, (result) ->
                     console.log result
@@ -18,8 +15,8 @@
 
             $scope.register = ->
                 commentModel.create
-                    authorId: $window.sessionStorage.me.id
-                    authorName: $window.sessionStorage.me.name
+                    authorId: $window.sessionStorage.getItem 'fbId'
+                    authorName: $window.sessionStorage.getItem 'name'
                     content: $scope.content
                     service: $scope.service.id
                     , (result) ->

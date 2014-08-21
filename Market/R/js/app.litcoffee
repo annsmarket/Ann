@@ -57,7 +57,7 @@
                 )).otherwise redirectTo: "/home"
             ]
 
-        app.controller "MenuCtrl", ($scope, $window, $location, ezfb) ->
+        app.controller "MenuCtrl", ($scope, $window, $location, ezfb, creatorModel) ->
             $scope.activeTab = 'home'
 
             $scope.$on '$locationChangeStart', (event) ->
@@ -98,7 +98,14 @@
             updateApiMe = ->
                 ezfb.api '/me', (res) ->
                     console.log 'me', res
-                    $window.sessionStorage.me = res
+                    # $window.sessionStorage.setItem 'me', res
+                    $window.sessionStorage.setItem 'name', res.name
+                    $window.sessionStorage.setItem 'fbId', res.id
+                    creatorModel.find {filter: {fbId: res.id}}, (result) ->
+                        unless result.length is 0
+                            $window.sessionStorage.setItem 'creatorId', result.id
+                        return
+
                     $scope.me = res
                     return
                 return

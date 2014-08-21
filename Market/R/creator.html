@@ -1,12 +1,10 @@
 <div class="row">
-    <div class="col-md-12" id="result">
-    </div>
-</div>
-<div class="row" ng-init="getList()">
-    <div class="col-md-12">
-        <ul>
-            <li ng-repeat="creator in creators">{{creator.name}}
-            </li>
-        </ul>
+    <div class="col-xs-3" ng-repeat="creator in creators">
+        <div class="thumbnail">
+            <img class="img-rounded" ng-src="https://graph.facebook.com/{{creator.fbId}}/picture?width=20&height=20">
+            <div class="caption text-center">
+                <h3><a href="#creator/{{creator.id}}">{{creator.name}}</a></h3>
+            </div>
+        </div>
     </div>
 </div>

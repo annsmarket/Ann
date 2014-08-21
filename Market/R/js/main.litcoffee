@@ -1,8 +1,8 @@
     require.config
         baseUrl: "js"
         paths:
-            'angular': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min'
-            'angular-route': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular-route.min'
+            'angular': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min'
+            'angular-route': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular-route.min'
             'angularAMD': 'http://cdn.jsdelivr.net/angular.amd/0.2/angularAMD.min'
             'jquery': 'http://code.jquery.com/jquery-1.11.1.min'
             'bootstrap': 'http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min'

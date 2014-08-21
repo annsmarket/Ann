@@ -16,8 +16,8 @@
 
             $scope.register = ->
                 commentModel.create
-                    authorId: $window.sessionStorage.me.id
-                    authorName: $window.sessionStorage.me.name
+                    authorId: $window.sessionStorage.getItem 'fbId'
+                    authorName: $window.sessionStorage.getItem 'name'
                     content: $scope.content
                     creator: $scope.creator.id
                     , (result) ->
